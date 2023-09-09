@@ -1,0 +1,159 @@
+﻿@page
+@model EnuguEdu.Web.Areas.Dashboard.Pages.Admin.SectionLevelsModel
+@{
+}
+
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header" style="padding:0;">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <h1 class="m-0" style="text-align:center;font-size: 1.38rem;font-weight:900;">ABIA DASHBOARD</h1>
+                </div><!-- /.col -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid card">
+ 
+      
+
+
+
+
+
+
+<div class="row" style="padding-top:5px;">
+    <div class="col-md-3">
+
+        <!-- Profile Image -->
+        <div class="card card-outline">
+            <div class="card-body box-profile">
+                <div class="text-center">
+                    @if (Model.Category3.Image != null)
+                    {
+                        <img class="profile-user-img img-fluid img-circle"
+                             src="@Model.Category3.Image"
+                             alt="User profile picture">
+                    }
+                    else
+                    {
+                        <img class="profile-user-img img-fluid img-circle"
+                             src="~/img/logo-1.png"
+                             alt="User profile picture">
+                    }
+                </div>
+
+                <h3 class="profile-username text-center">@Model.Category3.Title</h3>
+
+
+                <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item" style="padding: .1rem .5rem;">
+                        @if (Model.Category3.Email != null)
+                        {
+                            <b> @Model.Category3.Email</b>
+                        }
+                        else
+
+                        {
+                            <b>Email Address</b>
+                        }
+                    </li>
+                    <li class="list-group-item" style="padding: .1rem .5rem;">
+                        @if (Model.Category3.PhoneNumbers != null)
+                        {
+                            <b> @Model.Category3.PhoneNumbers</b>
+                        }
+                        else
+                        {
+                            <b>Email Address</b>
+                        }
+                    </li>
+                    <li class="list-group-item" style="padding: .1rem .5rem;">
+                        <a href="#" class="btn btn-primary btn-xs" style="width:100%;">View Profile</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.card-body -->
+        </div>
+
+    </div>
+    <!-- /.col -->
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header p-2">
+                <div class="" style="text-align:center;">
+                    <div><a class="" href="#activity" data-toggle="tab" style="text-align:center;font-weight:900;">PROFILE</a></div>
+
+                </div>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="active tab-pane" id="activity">
+                        <!-- Post -->
+                        <div class="post noline9">
+                            @if (Model.Category3.PhoneNumbers != null)
+                            {
+                                @Html.Raw(Model.Category3.Biography)
+                            }
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.tab-content -->
+            </div><!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>
+<div class="clearfix"></div>
+<div class="content-header" style="padding:1px 0;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" style="padding-left:0;">
+                <h5 class="m-0" style="font-weight:900;">KEY OFFICES</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model.Category)
+    {
+        <div class="col-lg-3 col-6">
+            <a asp-page="./SectionLevels" asp-route-id="@item.Id" class="small-box-footer">
+                <!-- small box -->
+                            <div class="small-box @item.Color" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                <div class="inner">
+                                    <h3 style="white-space: normal;text-align: center;height: 35px;">
+                                        @item.Title
+                                    </h3>
+
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                    
+                
+            </div></a>
+        </div>
+        <!-- ./col -->
+    }
+
+</div>
+
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

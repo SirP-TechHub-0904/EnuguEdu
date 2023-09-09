@@ -1,0 +1,80 @@
+﻿@page
+@model EnuguEdu.Web.Areas.Dashboard.Pages.Admin.IndexModel
+@{
+}
+<!-- Small boxes (Stat box) -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header" style="padding:0;">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <h1 class="m-0" style="text-align:center;font-size: 1.38rem;font-weight:900;">@Model.Category1.Title</h1>
+                </div><!-- /.col -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid card">
+            
+       
+
+ 
+<div class="content-header" style="padding:1px 0;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" style="padding-left:0;">
+                <h5 class="m-0" style="font-weight:900;"></h5>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="row">
+    @foreach (var item in Model.Category)
+    {
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <a asp-page="./Levels" asp-route-id="@item.Id" class="small-box-footer">
+                            <div class="small-box @item.Color" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                <div class="inner">
+                                    <h3 style="white-space: normal;text-align: center;height: 35px;">
+                                        @item.Title
+                                    </h3>
+                     
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                    @*@if (String.IsNullOrEmpty(item.Fullname))
+                    {
+                        <h5 class="noline" style="font-size: 0.85rem;
+    margin: 0;
+    text-align: left;
+    padding-left: 10px;">
+                            NO NAME YET
+                        </h5>
+                    }
+                    else
+                    {
+                        <h5 class="noline" style="font-size: 0.85rem;    margin: 0;    text-align: left;    padding-left: 10px;">
+                            @item.Fullname
+                        </h5>
+                    }*@
+
+                    
+                
+            </div></a>
+        </div>
+        <!-- ./col -->
+    }
+
+</div>
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
